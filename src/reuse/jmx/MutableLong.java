@@ -1,5 +1,11 @@
 package reuse.jmx;
 
+/**
+ * Don't use. This is just for testing. In general, should only use
+ * thread-safe classes with JMX.
+ * @author shengyu
+ *
+ */
 public class MutableLong extends Number {
 	/**
 	 * 

@@ -1,37 +1,13 @@
 package reuse.jmx;
 
-import java.lang.management.*;
 import java.util.concurrent.atomic.AtomicLong;
-
-import javax.management.*;
 
 public class LongValue implements LongValueMBean {
 	AtomicLong value;
 
-	public LongValue(AtomicLong value) {
+	public LongValue(AtomicLong value, String objectName) {
 		this.value = value;
-		
-		MBeanServer mbs = ManagementFactory.getPlatformMBeanServer(); 
-	      try {
-			ObjectName name = new ObjectName("com.example:df:type=Hello"); 
-
-			  mbs.registerMBean(this, name);
-		} catch (MalformedObjectNameException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InstanceAlreadyExistsException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (MBeanRegistrationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (NotCompliantMBeanException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (NullPointerException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
+		MBeanHelper.register(this, objectName);
 	}
 	
 	@Override
