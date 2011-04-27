@@ -7,11 +7,11 @@ import java.io.InputStream;
 import reuse.pipe.AbstractSource;
 import reuse.pipe.Target;
 
-public abstract class InputStreamSource<T> extends AbstractSource<T> {
+public abstract class InputStreamAbstractSource<T> extends AbstractSource<T> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory
-			.getLogger(InputStreamSource.class);
+			.getLogger(InputStreamAbstractSource.class);
 
-	public InputStreamSource(final InputStream inputStream, Target<T> target)
+	public InputStreamAbstractSource(final InputStream inputStream, Target<T> target)
 			throws IOException {
 		super(target);
 
@@ -19,11 +19,9 @@ public abstract class InputStreamSource<T> extends AbstractSource<T> {
 			@Override
 			public void run() {
 				try {
-					log.info("connection from {}", 1);
-
+					log.debug("reading input stream");
 					extract(new BufferedInputStream(inputStream));
-					log.info("stream closed {}", 1);
-
+					log.debug("stream closed");
 				} catch (IOException e) {
 					log.warn("", e);
 				}

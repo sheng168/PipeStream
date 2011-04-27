@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 
 import reuse.pipe.Target;
 
-public class InputStreamLineSource extends InputStreamSource<String> {
+public class InputStreamLineSource extends InputStreamAbstractSource<String> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory
 			.getLogger(InputStreamLineSource.class);
 

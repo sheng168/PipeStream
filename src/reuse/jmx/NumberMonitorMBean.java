@@ -1,9 +1,9 @@
 package reuse.jmx;
 
 public interface NumberMonitorMBean {
-	public abstract long getLong();
+	long getLong();
 
-	public abstract int getInt();
+	int getInt();
 
 	double getDouble();
 

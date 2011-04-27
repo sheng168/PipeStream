@@ -1,11 +1,11 @@
-package reuse.pipe.source;
+package reuse.pipe.source.test;
 
 import reuse.pipe.AbstractSource;
 import reuse.pipe.Target;
 
 
-public class CounterSource extends AbstractSource {
-	public CounterSource(final long n, Target target) {
+public class CounterSource extends AbstractSource<Long> {
+	public CounterSource(final long n, Target<Long> target) {
 		super(target);
 
 		Runnable r = new Runnable() {

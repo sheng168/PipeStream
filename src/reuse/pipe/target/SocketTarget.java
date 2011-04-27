@@ -7,16 +7,15 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 
-import reuse.pipe.Decorator;
 import reuse.pipe.Target;
 import reuse.pipe.decorator.AsyncDecorator;
-import reuse.pipe.source.CounterSource;
+import reuse.pipe.source.test.CounterSource;
 
-public class SocketDecorator extends Target<Object> {
-	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SocketDecorator.class);
+public class SocketTarget extends Target<Object> {
+	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SocketTarget.class);
 	private BufferedWriter bufferedWriter;
 
-	public SocketDecorator(String host, int port, Target<Object> target) throws UnknownHostException, IOException {
+	public SocketTarget(String host, int port, Target<Object> target) throws UnknownHostException, IOException {
 //		super(target);
 		
 		bufferedWriter = new BufferedWriter(
@@ -39,7 +38,7 @@ public class SocketDecorator extends Target<Object> {
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		new CounterSource(5000*1000, 
-			new AsyncDecorator<Object>(
-				new SocketDecorator("localhost", 2011, new Target<Object>())));
+			new AsyncDecorator(
+				new SocketTarget("localhost", 2011, new Target())));
 	}
 }
