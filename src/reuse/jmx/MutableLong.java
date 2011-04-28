@@ -3,6 +3,7 @@ package reuse.jmx;
 /**
  * Don't use. This is just for testing. In general, should only use
  * thread-safe classes with JMX.
+ * 
  * @author shengyu
  *
  */
@@ -16,25 +17,21 @@ public class MutableLong extends Number {
 	
 	@Override
 	public double doubleValue() {
-		// TODO Auto-generated method stub
 		return value;
 	}
 
 	@Override
 	public float floatValue() {
-		// TODO Auto-generated method stub
 		return value;
 	}
 
 	@Override
 	public int intValue() {
-		// TODO Auto-generated method stub
 		return (int) value;
 	}
 
 	@Override
 	public long longValue() {
-		// TODO Auto-generated method stub
 		return value;
 	}
 
