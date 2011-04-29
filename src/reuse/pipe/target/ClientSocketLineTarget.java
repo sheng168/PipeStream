@@ -11,11 +11,11 @@ import reuse.pipe.Target;
 import reuse.pipe.decorator.AsyncDecorator;
 import reuse.pipe.source.test.CounterSource;
 
-public class SocketTarget extends Target<Object> {
-	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SocketTarget.class);
+public class ClientSocketLineTarget extends Target<Object> {
+	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ClientSocketLineTarget.class);
 	private BufferedWriter bufferedWriter;
 
-	public SocketTarget(String host, int port, Target<Object> target) throws UnknownHostException, IOException {
+	public ClientSocketLineTarget(String host, int port, Target<Object> target) throws UnknownHostException, IOException {
 //		super(target);
 		
 		bufferedWriter = new BufferedWriter(
@@ -37,8 +37,8 @@ public class SocketTarget extends Target<Object> {
 	}
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
-		new CounterSource(5000*1000, 
-			new AsyncDecorator(
-				new SocketTarget("localhost", 2011, new Target())));
+//		new CounterSource(5000*1000, 
+//			new AsyncDecorator(
+//				new ClientSocketLineTarget("localhost", 2011, new Target())));
 	}
 }
