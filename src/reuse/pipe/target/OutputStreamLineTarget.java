@@ -5,6 +5,7 @@ import java.io.Closeable;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 
 import reuse.pipe.Target;
 
@@ -12,18 +13,18 @@ public class OutputStreamLineTarget extends Target<String> implements Closeable{
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory
 			.getLogger(OutputStreamLineTarget.class);
 	
-	private DataOutputStream dos;
+	private OutputStreamWriter dos;
 
 	public OutputStreamLineTarget(final OutputStream outs)
 			throws IOException {
-		dos = new DataOutputStream(new BufferedOutputStream(outs));	
+		dos = new OutputStreamWriter(new BufferedOutputStream(outs), "UTF-8");	
 	}
 
 	@Override
 	public void send(String line) {	
 		try {
-			dos.writeChars(line);
-			dos.writeChar('\n');
+			dos.write(line);
+			dos.write('\n');
 			dos.flush();
 		} catch (IOException e) {
 			log.error(e.toString(), e);

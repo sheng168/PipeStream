@@ -18,7 +18,7 @@ public class InputStreamLineSource extends InputStreamAbstractSource<String> {
 
 	protected void extract(final InputStream inputStream) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(
-				inputStream));
+				inputStream, "UTF-8"));
 
 		String line;
 		while ((line = br.readLine()) != null) {
