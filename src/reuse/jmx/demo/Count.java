@@ -22,7 +22,6 @@ public class Count {
 
 				@Override
 				public void run() {
-					// TODO Auto-generated method stub
 					Logger.getAnonymousLogger().warning("start");
 					long i = 0;
 					long n = 1000000000L*10;

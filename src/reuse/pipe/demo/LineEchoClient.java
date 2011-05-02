@@ -3,11 +3,7 @@ package reuse.pipe.demo;
 import java.io.IOException;
 import java.net.Socket;
 
-import reuse.pipe.Target;
-import reuse.pipe.decorator.CountDecorator;
-import reuse.pipe.decorator.LogDecorator;
-import reuse.pipe.router.TapRouter;
-import reuse.pipe.source.*;
+import reuse.pipe.source.InputStreamLineSource;
 import reuse.pipe.target.OutputStreamLineTarget;
 
 public class LineEchoClient {

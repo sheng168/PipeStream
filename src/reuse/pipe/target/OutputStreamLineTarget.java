@@ -2,7 +2,6 @@ package reuse.pipe.target;
 
 import java.io.BufferedOutputStream;
 import java.io.Closeable;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
