@@ -39,12 +39,12 @@ public class TestSource extends AbstractSource {
 			}
 		};
 		
-		new reuse.jmx.Runner(r, "real.test:type=action");
-		new reuse.jmx.Runner(new Runnable(){
-			@Override
-			public void run() {
-				System.out.println("hello" + Thread.currentThread());
-			}}, "real.test:name=hello,type=say");
+		new reuse.jmx.Runner("real.test:type=action", r);
+		new reuse.jmx.Runner("real.test:name=hello,type=say", new Runnable(){
+				@Override
+				public void run() {
+					System.out.println("hello" + Thread.currentThread());
+				}});
 		StopWatch.time(r, 1);
 	}
 
