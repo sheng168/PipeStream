@@ -5,6 +5,8 @@ import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import org.slf4j.MDC;
+
 import reuse.pipe.AbstractSource;
 import reuse.pipe.Target;
 
@@ -24,6 +26,9 @@ public abstract class ServerSocketAbstractSource<T> extends AbstractSource<T> {
 					try {
 						final Socket socket = ss.accept();
 						
+						log.debug("socket connected {}", socket);
+						MDC.put("host", ""+socket.getRemoteSocketAddress());
+						MDC.put("port", ""+socket.getLocalPort());
 						handleSocket(socket, ServerSocketAbstractSource.this.target);
 					} catch (IOException e) {
 						log.error(e.toString(), e);
@@ -31,9 +36,12 @@ public abstract class ServerSocketAbstractSource<T> extends AbstractSource<T> {
 				}
 				
 			}
-		}).start();
+		}, ServerSocketAbstractSource.class.getSimpleName() + ' ' + port).start();
 	}
 
+	/**
+	 * handle newly accepted socket
+	 */
 	protected void handleSocket(final Socket socket, Target<T> target) throws IOException {
 		createInputStreamSource(socket.getInputStream(), target);
 	}

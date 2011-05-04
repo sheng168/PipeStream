@@ -26,7 +26,7 @@ public abstract class InputStreamAbstractSource<T> extends AbstractSource<T> {
 					log.warn("", e);
 				}
 			}
-		}).start();
+		}, InputStreamAbstractSource.class.getSimpleName()).start();
 	}
 
 	protected abstract void extract(final InputStream inputStream) throws IOException;
