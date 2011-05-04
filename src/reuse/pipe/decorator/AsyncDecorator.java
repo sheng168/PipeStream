@@ -5,8 +5,9 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 import reuse.pipe.Decorator;
 import reuse.pipe.Target;
+import reuse.pipe.ThreadSafe;
 
-public class AsyncDecorator<T> extends Decorator<T> {
+public class AsyncDecorator<T> extends Decorator<T> implements ThreadSafe {
 	BlockingQueue<T> queue = new LinkedBlockingQueue<T>(10*1000);
 //	private MutableLong count;
 
