@@ -9,7 +9,7 @@ import java.nio.charset.Charset;
 
 import reuse.pipe.Target;
 import reuse.pipe.decorator.AsyncDecorator;
-import reuse.pipe.source.test.CounterSource;
+import reuse.pipe.source.CounterSource;
 
 public class ClientSocketLineTarget extends Target<Object> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ClientSocketLineTarget.class);
