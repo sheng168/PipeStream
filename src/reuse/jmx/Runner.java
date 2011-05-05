@@ -3,7 +3,7 @@ package reuse.jmx;
 public class Runner implements RunnerMBean {
 	Runnable runnable;
 	
-	public Runner(Runnable runnable, String objectName) {
+	public Runner(String objectName, Runnable runnable) {
 		super();
 		this.runnable = runnable;
 
