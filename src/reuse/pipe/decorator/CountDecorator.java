@@ -18,9 +18,9 @@ public class CountDecorator<T> extends Decorator<T> {
 	}
 
 	@Override
-	public void send(T o) {
+	public void send(T val) {
 		count.incrementAndGet();
-		super.send(o);
+		super.send(val);
 	}
 
 }
