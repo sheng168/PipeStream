@@ -10,8 +10,8 @@ public class Decorator<T> extends Target<T> implements Source <T>{
 	}
 
 	@Override
-	public void send(T o) {
-		target.send(o);
+	public void send(T val) {
+		target.send(val);
 	}
 
 	@Override

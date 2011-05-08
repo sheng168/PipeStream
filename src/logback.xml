@@ -1,9 +1,11 @@
 <configuration scan="true" scanPeriod="10 seconds">
+	<jmxConfigurator />
+	
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
 			by default -->
 		<encoder>
-			<pattern>%d{HH:mm:ss.SSSS} %-5level [%thread] %logger{16}-%msg%n
+			<pattern>%d{HH:mm:ss.SSSS} %.-2level [%.15thread]%X{port} %logger{0}.%M: %msg%n
 			</pattern>
 		</encoder>
 	</appender>

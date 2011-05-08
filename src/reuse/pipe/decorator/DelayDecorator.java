@@ -3,6 +3,13 @@ package reuse.pipe.decorator;
 import reuse.pipe.Decorator;
 import reuse.pipe.Target;
 
+/**
+ * Add a fixed amount of delay
+ * 
+ * @author shengyu
+ *
+ * @param <T>
+ */
 public class DelayDecorator<T> extends Decorator<T> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DelayDecorator.class);
 

@@ -8,18 +8,18 @@ public abstract class AbstractRouter<T> extends Decorator<T> {
 
 	Target<T> targetFalse;
 	
-	public AbstractRouter(Target<T> target, Target<T> targetFalse) {
-		super(target);
+	public AbstractRouter(Target<T> targetTrue, Target<T> targetFalse) {
+		super(targetTrue);
 		this.targetFalse = targetFalse;
 	}
 
 	@Override
-	public void send(T o) {
-		if (route(o))
-			super.send(o);
+	public void send(T val) {
+		if (route(val))
+			super.send(val);
 		else
-			targetFalse.send(o);
+			targetFalse.send(val);
 	}
 
-	abstract boolean route(T o);
+	protected abstract boolean route(T val);
 }
