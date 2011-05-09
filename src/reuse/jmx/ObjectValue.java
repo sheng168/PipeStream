@@ -4,7 +4,7 @@ package reuse.jmx;
 public class ObjectValue implements ObjectValueMBean {
 	Object value;
 
-	public ObjectValue(String value, String objectName) {
+	public ObjectValue(Object value, String objectName) {
 		this.value = value;
 		MBeanHelper.register(this, objectName);
 	}

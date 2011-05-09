@@ -18,6 +18,8 @@ public class ProxyDecorator<T> extends Decorator<T> {
 	}
 	
 	public void set(Decorator<T> delegate) {
+//		if (delegate == null)
+//			return;
 		this.delegate = delegate;
 		this.delegate.setTarget(getTarget());
 	}
