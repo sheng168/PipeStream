@@ -1,12 +1,9 @@
 package reuse.pipe;
 
 
-public class Decorator<T> extends Target<T> implements Source <T>{
-	Target<T> target;
-
+public class Decorator<T> extends AbstractSource<T> implements Pipe<T> {
 	public Decorator(Target<T> target) {
-		super();
-		this.target = target;
+		super(target);
 	}
 
 	@Override
@@ -14,13 +11,4 @@ public class Decorator<T> extends Target<T> implements Source <T>{
 		target.send(val);
 	}
 
-	@Override
-	public Target<T> getTarget() {
-		return target;
-	}
-
-	@Override
-	public void setTarget(Target<T> target) {
-		this.target = target;
-	}
 }

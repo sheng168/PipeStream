@@ -1,7 +1,7 @@
 package reuse.pipe;
 
 
-public class AbstractSource<T> implements Source<T> {
+public abstract class AbstractSource<T> implements Source<T> {
 
 	protected Target<T> target;
 

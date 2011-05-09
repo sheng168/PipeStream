@@ -4,9 +4,9 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import reuse.pipe.Target;
+import reuse.pipe.NullTarget;
 
-public class OutputStreamAbstractTarget<T> extends Target<T> implements Closeable{
+public class OutputStreamAbstractTarget<T> extends NullTarget<T> implements Closeable{
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory
 			.getLogger(OutputStreamAbstractTarget.class);
 	

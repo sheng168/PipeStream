@@ -5,6 +5,6 @@ package reuse.pipe;
  * @author shengyu
  *
  */
-public interface ThreadSingle {
+public interface ThreadUnsafe {
 
 }

@@ -7,11 +7,12 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 
+import reuse.pipe.NullTarget;
 import reuse.pipe.Target;
 import reuse.pipe.decorator.AsyncDecorator;
 import reuse.pipe.source.CounterSource;
 
-public class ClientSocketLineTarget extends Target<Object> {
+public class ClientSocketLineTarget extends NullTarget<Object> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ClientSocketLineTarget.class);
 	private BufferedWriter bufferedWriter;
 

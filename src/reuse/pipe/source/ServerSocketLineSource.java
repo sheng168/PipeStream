@@ -3,6 +3,7 @@ package reuse.pipe.source;
 import java.io.IOException;
 import java.io.InputStream;
 
+import reuse.pipe.NullTarget;
 import reuse.pipe.Target;
 import reuse.pipe.decorator.CountDecorator;
 import reuse.pipe.decorator.LogDecorator;
@@ -24,7 +25,7 @@ public class ServerSocketLineSource extends ServerSocketAbstractSource<String> {
 			new ServerSocketLineSource(2011, 
 				new LogDecorator<String>(
 					new CountDecorator<String>(
-						new Target<String>())));		
+						new NullTarget<String>())));		
 	}
 
 	@Override

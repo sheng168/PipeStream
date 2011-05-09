@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
-import reuse.pipe.Target;
+import reuse.pipe.NullTarget;
 
-public class OutputStreamLineTarget extends Target<String> implements Closeable{
+public class OutputStreamLineTarget extends NullTarget<String> implements Closeable{
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory
 			.getLogger(OutputStreamLineTarget.class);
 	
