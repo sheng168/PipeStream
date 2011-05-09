@@ -21,5 +21,10 @@ public abstract class AbstractRouter<T> extends Decorator<T> {
 			targetFalse.send(val);
 	}
 
+	/**
+	 * Invoke for each value.
+	 * @param val
+	 * @return determines which target value will get send to.
+	 */
 	protected abstract boolean route(T val);
 }
