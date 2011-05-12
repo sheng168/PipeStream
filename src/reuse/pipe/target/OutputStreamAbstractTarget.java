@@ -1,16 +1,15 @@
 package reuse.pipe.target;
 
-import java.io.Closeable;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import reuse.pipe.NullTarget;
+import reuse.pipe.Target;
 
-public class OutputStreamAbstractTarget<T> extends NullTarget<T> implements Closeable{
+public abstract class OutputStreamAbstractTarget<T>  implements Target<T> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory
 			.getLogger(OutputStreamAbstractTarget.class);
 	
-	private OutputStream os;
+	protected OutputStream os;
 
 	public OutputStreamAbstractTarget(OutputStream os) {
 		super();
@@ -21,4 +20,14 @@ public class OutputStreamAbstractTarget<T> extends NullTarget<T> implements Clos
 	public void close() throws IOException {
 		os.close();
 	}
+
+	@Override
+	public void flush() {
+		try {
+			os.flush();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 }

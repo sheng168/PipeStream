@@ -28,6 +28,12 @@ public class Count {
 					for (; true; i++) {
 						System.nanoTime();
 						count.incrementAndGet();
+						try {
+							Thread.sleep(1000);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 //					Logger.getAnonymousLogger().warning("done");
 				}				

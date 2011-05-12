@@ -1,6 +1,6 @@
 package reuse.pipe;
 
 
-public interface Pipe<T> extends Target<T>, Source<T> {
+public interface Pipe<T> extends Converter<T, T> {
 
 }

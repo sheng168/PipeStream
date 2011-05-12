@@ -8,13 +8,16 @@ import reuse.pipe.Target;
 
 public class CountDecorator<T> extends Decorator<T> {
 	
-	private AtomicLong count;
+	private AtomicLong count = new AtomicLong();
 
 	public CountDecorator(Target<T> target) {
+		this("",target);
+	}
+
+	public CountDecorator(String name, Target<T> target) {
 		super(target);
-		
-		count = new AtomicLong();
-		new NumberAndDeltaMonitor(count, "real.test:type=count");
+
+		new NumberAndDeltaMonitor(count, this+name+":name=count");
 	}
 
 	@Override

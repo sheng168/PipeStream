@@ -15,16 +15,12 @@ public class SpacerDelayDecorator<T> extends Decorator<T> {
 
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SpacerDelayDecorator.class);
 
-	private final long nanos;
+	private final Number spaceMillis; // allow value to change from outside
 	private long open;
 
-	public SpacerDelayDecorator(long nanos, Target<T> target) {
+	public SpacerDelayDecorator(Number millis, Target<T> target) {
 		super(target);
-		this.nanos = nanos;
-	}
-
-	public SpacerDelayDecorator(long millis, long nanos, Target<T> target) {
-		this(millis*NANOS_IN_MILLIS + nanos, target);
+		this.spaceMillis = millis;
 	}
 
 	@Override
@@ -33,6 +29,8 @@ public class SpacerDelayDecorator<T> extends Decorator<T> {
 		
 		if (now < open) {
 			long sleep = open - now;
+			log.debug("sleeping for {}ns", sleep);
+			
 			try {
 				Thread.sleep(sleep/NANOS_IN_MILLIS, (int)(sleep%NANOS_IN_MILLIS));
 			} catch (InterruptedException e) {
@@ -40,7 +38,7 @@ public class SpacerDelayDecorator<T> extends Decorator<T> {
 			}
 		}
 		
-		open = now + nanos;
+		open = now + (long)(spaceMillis.doubleValue() * 1.0e6);
 		super.send(o);
 	}
 }

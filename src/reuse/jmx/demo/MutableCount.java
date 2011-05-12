@@ -3,7 +3,7 @@ package reuse.jmx.demo;
 import java.util.logging.Logger;
 import java.util.prefs.Preferences;
 
-import reuse.jmx.MutableLong;
+import reuse.jmx.numbers.MutableLong;
 
 
 public class MutableCount {

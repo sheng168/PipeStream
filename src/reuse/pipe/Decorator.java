@@ -1,5 +1,7 @@
 package reuse.pipe;
 
+import java.io.IOException;
+
 
 public class Decorator<T> extends AbstractSource<T> implements Pipe<T> {
 	public Decorator(Target<T> target) {
@@ -11,4 +13,13 @@ public class Decorator<T> extends AbstractSource<T> implements Pipe<T> {
 		target.send(val);
 	}
 
+	@Override
+	public void close() throws IOException {
+		target.close();
+	}
+
+	@Override
+	public void flush() {
+		target.flush();
+	}
 }

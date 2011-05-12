@@ -9,8 +9,11 @@
 			</pattern>
 		</encoder>
 	</appender>
+	
+	<logger name="real.msg" level="DEBUG"/>
+	<logger name="reuse" level="DEBUG"/>
 
-	<root level="debug">
+	<root level="info">
 		<appender-ref ref="STDOUT" />
 	</root>
 </configuration>

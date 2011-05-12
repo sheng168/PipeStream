@@ -1,5 +1,7 @@
 package reuse.pipe;
 
+import java.io.IOException;
+
 public abstract class AbstractConverter<F, T> extends AbstractSource<T> implements Converter<F, T> {
 
 	public AbstractConverter(Target<T> target) {
@@ -12,4 +14,14 @@ public abstract class AbstractConverter<F, T> extends AbstractSource<T> implemen
 	}
 
 	protected abstract T convert(F value);
+	
+	@Override
+	public void close() throws IOException {
+		target.close();
+	}
+	
+	@Override
+	public void flush() {
+		target.flush();
+	}
 }

@@ -1,6 +1,7 @@
 package reuse.pipe.source;
 
 import java.io.BufferedInputStream;
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -20,8 +21,13 @@ public abstract class InputStreamAbstractSource<T> extends AbstractSource<T> {
 			public void run() {
 				try {
 					log.debug("reading input stream");
-					extract(new BufferedInputStream(inputStream));
+					extract(new BufferedInputStream( // should we impose buffering?
+							inputStream)
+					);
+					InputStreamAbstractSource.this.target.close();
 					log.debug("stream closed");
+				} catch (EOFException e) {
+					log.info("connection closed {}", e.toString());
 				} catch (IOException e) {
 					log.warn("", e);
 				}

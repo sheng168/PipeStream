@@ -1,4 +1,4 @@
-package reuse.jmx;
+package reuse.jmx.numbers;
 
 /**
  * Don't use. This is just for testing. In general, should only use
