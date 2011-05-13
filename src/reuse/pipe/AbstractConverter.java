@@ -2,6 +2,8 @@ package reuse.pipe;
 
 import java.io.IOException;
 
+import reuse.pipe.source.AbstractSource;
+
 public abstract class AbstractConverter<F, T> extends AbstractSource<T> implements Converter<F, T> {
 
 	public AbstractConverter(Target<T> target) {

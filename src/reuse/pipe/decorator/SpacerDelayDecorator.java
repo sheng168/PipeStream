@@ -36,9 +36,11 @@ public class SpacerDelayDecorator<T> extends Decorator<T> {
 			} catch (InterruptedException e) {
 				log.warn("", e);
 			}
+		} else {
+			log.debug("no delay needed");
 		}
 		
-		open = now + (long)(spaceMillis.doubleValue() * 1.0e6);
+		open = System.nanoTime() + (long)(spaceMillis.doubleValue() * 1.0e6);
 		super.send(o);
 	}
 }

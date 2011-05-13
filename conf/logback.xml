@@ -5,15 +5,15 @@
 		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
 			by default -->
 		<encoder>
-			<pattern>%d{HH:mm:ss.SSSS} %.-2level [%.15thread]%X{port} %logger{0}.%M: %msg%n
+			<pattern>%d{HH:mm:ss.SSSS} %.-2level [%.15thread]%X{port} %logger{1}.%M: %msg%n
 			</pattern>
 		</encoder>
 	</appender>
 	
-	<logger name="real.msg" level="DEBUG"/>
-	<logger name="reuse" level="DEBUG"/>
+	<logger name="real.msg" level="INFO"/>
+	<logger name="reuse.pipe.decorator.SpacerDelayDecorator" level="INFO"/>
 
-	<root level="info">
+	<root level="debug">
 		<appender-ref ref="STDOUT" />
 	</root>
 </configuration>

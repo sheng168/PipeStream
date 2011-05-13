@@ -1,5 +1,7 @@
 package reuse.pipe;
 
+import reuse.pipe.target.AbstractTarget;
+
 
 public class NullTarget<T> extends AbstractTarget<T> implements Target<T> {
 	@Override

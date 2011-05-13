@@ -7,12 +7,9 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 
-import reuse.pipe.NullTarget;
 import reuse.pipe.Target;
-import reuse.pipe.decorator.AsyncDecorator;
-import reuse.pipe.source.CounterSource;
 
-public class ClientSocketLineTarget extends NullTarget<Object> {
+public class ClientSocketLineTarget extends AbstractTarget<Object> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ClientSocketLineTarget.class);
 	private BufferedWriter bufferedWriter;
 
@@ -40,6 +37,6 @@ public class ClientSocketLineTarget extends NullTarget<Object> {
 	public static void main(String[] args) throws UnknownHostException, IOException {
 //		new CounterSource(5000*1000, 
 //			new AsyncDecorator(
-//				new ClientSocketLineTarget("localhost", 2011, new Target())));
+//				new TopicTarget("localhost", 2011, new Target())));
 	}
 }

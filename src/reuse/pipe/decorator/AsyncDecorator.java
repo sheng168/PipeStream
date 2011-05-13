@@ -40,6 +40,10 @@ public class AsyncDecorator<T> extends Decorator<T> implements ThreadSafe {
 			try {
 				T take = queue.take();
 				super.send(take);
+				if (queue.size() == 0) {
+//					log.info()
+					super.flush();
+				}
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

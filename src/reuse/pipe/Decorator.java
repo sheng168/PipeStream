@@ -2,6 +2,8 @@ package reuse.pipe;
 
 import java.io.IOException;
 
+import reuse.pipe.source.AbstractSource;
+
 
 public class Decorator<T> extends AbstractSource<T> implements Pipe<T> {
 	public Decorator(Target<T> target) {

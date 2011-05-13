@@ -1,14 +1,10 @@
 package reuse.pipe.target;
 
-import java.io.BufferedOutputStream;
-import java.io.Closeable;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
-import reuse.pipe.NullTarget;
-
-public class OutputStreamLineTarget extends NullTarget<String> implements Closeable{
+public class OutputStreamLineTarget extends OutputStreamAbstractTarget<String> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory
 			.getLogger(OutputStreamLineTarget.class);
 	
@@ -16,7 +12,8 @@ public class OutputStreamLineTarget extends NullTarget<String> implements Closea
 
 	public OutputStreamLineTarget(final OutputStream outs)
 			throws IOException {
-		dos = new OutputStreamWriter(new BufferedOutputStream(outs), "UTF-8");	
+		super(outs);
+		dos = new OutputStreamWriter(outs, "UTF-8");	
 	}
 
 	@Override
@@ -30,9 +27,4 @@ public class OutputStreamLineTarget extends NullTarget<String> implements Closea
 		}
 	}
 	
-	@Override
-	public void close() throws IOException {
-		dos.close();
-	}
-
 }

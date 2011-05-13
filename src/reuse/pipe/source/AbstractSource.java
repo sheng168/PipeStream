@@ -1,4 +1,7 @@
-package reuse.pipe;
+package reuse.pipe.source;
+
+import reuse.pipe.Source;
+import reuse.pipe.Target;
 
 
 public abstract class AbstractSource<T> implements Source<T> {
@@ -20,4 +23,7 @@ public abstract class AbstractSource<T> implements Source<T> {
 		this.target = target;
 	}
 
+	protected void feed(T val) {
+		target.send(val);
+	}
 }
