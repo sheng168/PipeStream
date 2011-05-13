@@ -1,9 +1,14 @@
 syntax: glob
 bin
 
+nbproject
 syntax: regexp
 ^lib/hazelcast-all-1\.9\.3\.jar$
+build
 syntax: regexp
 ^lib/logback-classic-0\.9\.28\.jar$
 syntax: regexp
 ^lib/logback-core-0\.9\.28\.jar$
+
+syntax: regexp
+^nbproject$
