@@ -17,7 +17,12 @@ public class IteratorSource<T> extends AbstractThreadedSource<T> {
 	public void run() {
 		while (iterator.hasNext()) {
 			T value = iterator.next();
-			feed(value);
+			try {
+				feed(value);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 	

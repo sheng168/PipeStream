@@ -31,8 +31,13 @@ class PumpSocketTarget extends AbstractSocketTarget<ByteBuffer> {
 			@Override
 			public void run() {
 				ByteBuffer bb = ByteBuffer.wrap(new byte[8*1024]);
-				while (true)
-					out.send(bb);
+				try {
+					while (true)
+						out.send(bb);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}).start(); // pump data out independent of input
 		

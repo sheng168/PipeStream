@@ -16,14 +16,14 @@ public class InputStreamLineSource extends InputStreamAbstractSource<String> {
 		super(inputStream, target);
 	}
 
-	protected void extract(final InputStream inputStream) throws IOException {
+	protected void extract(final InputStream inputStream) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(
 				inputStream, "UTF-8"));
 
 		String line;
 		while ((line = br.readLine()) != null) {
 			// log.info("input: {}", line);
-			target.send(line);
+			feed(line);
 		}
 	}
 }

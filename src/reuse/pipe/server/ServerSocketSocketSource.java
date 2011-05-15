@@ -32,7 +32,7 @@ public class ServerSocketSocketSource extends AbstractThreadedSource<Socket> {
 				MDC.put("host", ""+socket.getRemoteSocketAddress());
 				MDC.put("port", ""+socket.getPort());
 				this.feed(socket);
-			} catch (IOException e) {
+			} catch (Exception e) {
 				log.error(e.toString(), e);
 			}
 		}

@@ -23,7 +23,12 @@ public class TopicSource<T> extends AbstractSource<T> implements MessageListener
 	
 	@Override
 	public void onMessage(T value) {
-		target.send(value);
+		try {
+			feed(value);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }

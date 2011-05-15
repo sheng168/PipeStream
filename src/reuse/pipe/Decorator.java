@@ -11,8 +11,8 @@ public class Decorator<T> extends AbstractSource<T> implements Pipe<T> {
 	}
 
 	@Override
-	public void send(T val) {
-		target.send(val);
+	public void send(T val) throws Exception {
+		feed(val);
 	}
 
 	@Override

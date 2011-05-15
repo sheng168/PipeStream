@@ -11,8 +11,8 @@ public abstract class AbstractConverter<F, T> extends AbstractSource<T> implemen
 	}
 
 	@Override
-	public void send(F value) {
-		target.send(convert(value));
+	public void send(F value) throws Exception {
+		feed(convert(value));
 	}
 
 	protected abstract T convert(F value);

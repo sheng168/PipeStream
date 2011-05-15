@@ -24,7 +24,7 @@ public class SpacerDelayDecorator<T> extends Decorator<T> {
 	}
 
 	@Override
-	public void send(T o) {
+	public void send(T o) throws Exception {
 		final long now = System.nanoTime();
 		
 		if (now < open) {

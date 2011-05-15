@@ -13,7 +13,7 @@ public class ProxyDecorator<T> extends Decorator<T> {
 	}
 
 	@Override
-	public void send(T val) {
+	public void send(T val) throws Exception {
 		delegate.send(val);
 	}
 	

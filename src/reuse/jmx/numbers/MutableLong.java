@@ -13,8 +13,16 @@ public class MutableLong extends Number {
 	 */
 	private static final long serialVersionUID = 5920567619731072479L;
 	
-	public long value;
+	private long value;
 	
+	public long getValue() {
+		return value;
+	}
+
+	public void setValue(long value) {
+		this.value = value;
+	}
+
 	@Override
 	public double doubleValue() {
 		return value;
@@ -33,6 +41,10 @@ public class MutableLong extends Number {
 	@Override
 	public long longValue() {
 		return value;
+	}
+
+	public void add(long l) {
+		value += l;
 	}
 
 }

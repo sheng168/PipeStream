@@ -21,7 +21,7 @@ public class CountDecorator<T> extends Decorator<T> {
 	}
 
 	@Override
-	public void send(T val) {
+	public void send(T val) throws Exception {
 		count.incrementAndGet();
 		super.send(val);
 	}

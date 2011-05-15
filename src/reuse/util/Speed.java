@@ -5,7 +5,7 @@ package reuse.util;
 public class Speed extends Number {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(Speed.class);
 	
-	long minElapse = 100;
+	long minElapse = 1000;
 	Number count;
 	long prevTime;
 	double prevCount;

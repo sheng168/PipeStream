@@ -11,7 +11,7 @@ public abstract class IndexSwitch<T> extends AbstractSwitch<T> {
 	}
 
 	@Override
-	public void send(T value) {
+	public void send(T value) throws Exception {
 		targets.get(sendTo()).send(value);
 	}
 

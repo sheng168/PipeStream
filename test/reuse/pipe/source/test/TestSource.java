@@ -35,7 +35,7 @@ public class TestSource extends AbstractSource {
 			@Override
 			public void run() {
 				for (long i = 0; i < n ; i++) {
-					source.target.send(o);
+					//source.target.send(o);
 				}
 			}
 		};

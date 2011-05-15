@@ -1,5 +1,7 @@
 package reuse.pipe.source;
 
+import java.util.concurrent.TimeUnit;
+
 import reuse.pipe.Target;
 
 
@@ -19,5 +21,21 @@ public abstract class AbstractThreadedSource<T> extends AbstractSource<T> implem
 	public AbstractThreadedSource<T> start() {
 		new Thread(this, this.getClass().getSimpleName()).start();
 		return this;
+	}
+
+	@Override
+	public void run() {
+		try {
+			while (true) {
+				poll();
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	protected void poll() throws Exception {
+		TimeUnit.MINUTES.sleep(1);
 	}
 }

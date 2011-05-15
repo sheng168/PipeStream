@@ -28,7 +28,7 @@ public class DelayDecorator<T> extends Decorator<T> {
 	}
 
 	@Override
-	public void send(T o) {
+	public void send(T o) throws Exception {
 		try {
 			Thread.sleep(millis, nanos);
 		} catch (InterruptedException e) {

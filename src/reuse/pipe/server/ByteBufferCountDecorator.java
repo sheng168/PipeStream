@@ -18,11 +18,11 @@ public class ByteBufferCountDecorator extends Decorator<ByteBuffer> {
 	public ByteBufferCountDecorator(String name, Target<ByteBuffer> target) {
 		super(target);
 
-		new NumberAndDeltaMonitor(count, this+name+":name=size");
+		new NumberAndDeltaMonitor(count, this.toString().replace("@",":type=")+name+",name=size");
 	}
 
 	@Override
-	public void send(ByteBuffer val) {
+	public void send(ByteBuffer val) throws Exception {
 		count.addAndGet(val.limit());
 		super.send(val);
 	}

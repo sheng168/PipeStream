@@ -7,7 +7,6 @@ import java.nio.ByteBuffer;
 
 import reuse.pipe.NullTarget;
 import reuse.pipe.Target;
-import reuse.pipe.decorator.CountDecorator;
 import reuse.pipe.decorator.LogDecorator;
 
 public class InputStreamByteBufferSource extends InputStreamAbstractSource<ByteBuffer> {
@@ -18,7 +17,7 @@ public class InputStreamByteBufferSource extends InputStreamAbstractSource<ByteB
 		super(inputStream, target);
 	}
 
-	protected void extract(InputStream is) throws IOException {
+	protected void extract(InputStream is) throws Exception {
 		byte[] buf = new byte[8*1024];
 		int read;
 		while ((read = is.read(buf)) >= 0) {

@@ -14,7 +14,7 @@ public abstract class AbstractRouter<T> extends Decorator<T> {
 	}
 
 	@Override
-	public void send(T val) {
+	public void send(T val) throws Exception {
 		if (route(val))
 			super.send(val);
 		else

@@ -29,10 +29,10 @@ public abstract class InputStreamAbstractSource<T> extends AbstractThreadedSourc
 			log.debug("stream closed");
 		} catch (EOFException e) {
 			log.info("connection closed {}", e.toString());
-		} catch (IOException e) {
+		} catch (Exception e) {
 			log.warn("", e);
 		}
 	}
 
-	protected abstract void extract(final InputStream inputStream) throws IOException;
+	protected abstract void extract(final InputStream inputStream) throws IOException, Exception;
 }

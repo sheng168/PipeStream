@@ -14,7 +14,7 @@ public class TapRouter<T> extends Decorator<T> {
 	}
 
 	@Override
-	public void send(T val) {
+	public void send(T val) throws Exception {
 		super.send(val);
 		after.send(val);
 	}

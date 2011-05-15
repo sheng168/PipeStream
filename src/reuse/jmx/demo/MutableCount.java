@@ -16,9 +16,9 @@ public class MutableCount {
 	public static void main(String[] args) throws InterruptedException {
 		final MutableLong count = new MutableLong();
 		
-		count.value = prefs.getLong("count", 0L);
+		count.setValue(prefs.getLong("count", 0L));
 //		prefs.
-		log.info("starting count at {}", count.value);
+		log.info("starting count at {}", count.getValue());
 		
 		new reuse.jmx.NumberMonitor(count, "real.test:type=count");
 		new reuse.jmx.NumberMonitor(new reuse.util.Speed(count), "real.test:type=speed");
@@ -31,7 +31,7 @@ public class MutableCount {
 					long i = 0;
 					long n = 1000000000L*10;
 					for (; true; i++) {
-						count.value++;
+						count.add(1);
 					}
 //					Logger.getAnonymousLogger().warning("done");
 				}				
@@ -40,7 +40,7 @@ public class MutableCount {
 		System.out.println("start");
 //		System.out.println("done " + i);
 		while (true) {
-			long value = count.value;
+			long value = count.getValue();
 			log.info("count checkpoing {}", value);
 			prefs.putLong("count", value);
 			Thread.sleep(1000);

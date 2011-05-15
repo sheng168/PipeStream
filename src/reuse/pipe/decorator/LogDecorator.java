@@ -26,7 +26,7 @@ public class LogDecorator<T> extends Decorator<T> {
 	}
 
 	@Override
-	public void send(T o) {
+	public void send(T o) throws Exception {
 		log.debug(logMsg, o);
 		super.send(o);
 	}

@@ -13,7 +13,12 @@ public class CounterSource extends AbstractThreadedSource<Long> {
 	
 	public void run() {
 		for (long i = 0; i < n ; i++) {
-			CounterSource.this.target.send(i);
+			try {
+				feed(i);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 }

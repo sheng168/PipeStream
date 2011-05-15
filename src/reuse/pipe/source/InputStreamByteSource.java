@@ -16,10 +16,10 @@ public class InputStreamByteSource extends InputStreamAbstractSource<Byte> {
 		super(inputStream, target);
 	}
 
-	protected void extract(InputStream is) throws IOException {
+	protected void extract(InputStream is) throws Exception {
 		int read;
 		while ((read = is.read()) >= 0) {
-			target.send(Byte.valueOf((byte) read));
+			feed(Byte.valueOf((byte) read));
 		}
 	}
 	

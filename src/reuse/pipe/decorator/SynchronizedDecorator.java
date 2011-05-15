@@ -10,7 +10,7 @@ public class SynchronizedDecorator<T> extends Decorator<T> {
 	}
 
 	@Override
-	public synchronized void send(T val) {
+	public synchronized void send(T val) throws Exception {
 		super.send(val);
 	}
 

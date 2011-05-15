@@ -23,7 +23,7 @@ public abstract class AbstractSource<T> implements Source<T> {
 		this.target = target;
 	}
 
-	protected void feed(T val) {
+	protected void feed(T val) throws Exception {
 		target.send(val);
 	}
 }

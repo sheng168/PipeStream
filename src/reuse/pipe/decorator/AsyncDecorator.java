@@ -6,49 +6,28 @@ import java.util.concurrent.LinkedBlockingQueue;
 import reuse.pipe.Decorator;
 import reuse.pipe.Target;
 import reuse.pipe.ThreadSafe;
+import reuse.pipe.source.BlockingQueueSource;
 
 public class AsyncDecorator<T> extends Decorator<T> implements ThreadSafe {
 	BlockingQueue<T> queue = new LinkedBlockingQueue<T>(10*1000);
-//	private MutableLong count;
+	
+	private BlockingQueueSource<T> source;
 
 	public AsyncDecorator(Target<T> target) {
 		super(target);
-		new Thread(new Runnable(){
 
-			@Override
-			public void run() {
-				AsyncDecorator.this.run();
-			}
-			
-		}).start();
-//		count = new MutableLong();
-//		new NumberAndDeltaMonitor(count, "real.test:type=count");
+		source = (BlockingQueueSource<T>) new BlockingQueueSource<T>(queue, target).start();
 	}
 
 	@Override
-	public void send(T o) {
-		try {
-			queue.put(o);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void send(T o) throws InterruptedException {
+		queue.put(o);
 	}
 	
-	void run() {
-		while (true) {
-			try {
-				T take = queue.take();
-				super.send(take);
-				if (queue.size() == 0) {
-//					log.info()
-					super.flush();
-				}
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+	@Override
+	public void setTarget(Target<T> target) {
+		source.setTarget(target);
+		super.setTarget(target);
 	}
 
 }

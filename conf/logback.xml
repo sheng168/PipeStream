@@ -10,10 +10,10 @@
 		</encoder>
 	</appender>
 	
-	<logger name="real.msg" level="INFO"/>
+	<logger name="real.msg" level="debug"/>
 	<logger name="reuse.pipe.decorator.SpacerDelayDecorator" level="INFO"/>
 
-	<root level="debug">
+	<root level="warn">
 		<appender-ref ref="STDOUT" />
 	</root>
 </configuration>
