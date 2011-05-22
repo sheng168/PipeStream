@@ -14,7 +14,7 @@ public abstract class AbstractBinaryOperator extends Number {
 
 	@Override
 	public int intValue() {
-		return (int) doubleValue();
+		return (int) longValue();
 	}
 
 	@Override
