@@ -6,7 +6,7 @@ import java.net.Socket;
 import reuse.pipe.NullTarget;
 import reuse.pipe.Target;
 import reuse.pipe.decorator.CountDecorator;
-import reuse.pipe.router.TapRouter;
+import reuse.pipe.router.BroadcastBinaryRouter;
 import reuse.pipe.source.ServerSocketLineSource;
 import reuse.pipe.target.OutputStreamLineTarget;
 
@@ -21,7 +21,7 @@ public class LineEchoServer {
 			@Override
 			protected void handleSocket(Socket socket, Target<String> target) throws IOException {
 				super.handleSocket(socket, 
-					new TapRouter<String>(new OutputStreamLineTarget(socket.getOutputStream()), target));
+					new BroadcastBinaryRouter<String>(new OutputStreamLineTarget(socket.getOutputStream()), target));
 			}
 		};
 	}

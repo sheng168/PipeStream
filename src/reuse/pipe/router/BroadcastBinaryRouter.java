@@ -3,12 +3,12 @@ package reuse.pipe.router;
 import reuse.pipe.Decorator;
 import reuse.pipe.Target;
 
-public class TapRouter<T> extends Decorator<T> {
-	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(TapRouter.class);
+public class BroadcastBinaryRouter<T> extends Decorator<T> {
+	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(BroadcastBinaryRouter.class);
 
 	Target<T> after;
 	
-	public TapRouter(Target<T> before, Target<T> after) {
+	public BroadcastBinaryRouter(Target<T> before, Target<T> after) {
 		super(before);
 		this.after = after;
 	}

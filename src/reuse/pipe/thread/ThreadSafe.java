@@ -1,4 +1,4 @@
-package reuse.pipe;
+package reuse.pipe.thread;
 
 /**
  * Mark a component as thread safe

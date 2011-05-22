@@ -9,7 +9,7 @@ import reuse.pipe.NullTarget;
 import reuse.pipe.Target;
 import reuse.pipe.decorator.CountDecorator;
 import reuse.pipe.decorator.LogDecorator;
-import reuse.pipe.router.TapRouter;
+import reuse.pipe.router.BroadcastBinaryRouter;
 import reuse.pipe.source.InputStreamByteBufferSource;
 import reuse.pipe.source.ServerSocketAbstractSource;
 import reuse.pipe.target.OutputStreamByteBufferTarget;
@@ -28,7 +28,7 @@ public class EchoServerOld {
 			@Override
 			protected void handleSocket(Socket socket, Target<ByteBuffer> target) throws IOException {
 				super.handleSocket(socket, 
-					new TapRouter<ByteBuffer>(new OutputStreamByteBufferTarget(socket.getOutputStream()), target));
+					new BroadcastBinaryRouter<ByteBuffer>(new OutputStreamByteBufferTarget(socket.getOutputStream()), target));
 			}
 
 			@Override

@@ -1,4 +1,4 @@
-package reuse.pipe.server;
+package reuse.pipe.decorator;
 
 import java.nio.ByteBuffer;
 import java.util.concurrent.atomic.AtomicLong;

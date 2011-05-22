@@ -4,9 +4,9 @@ import java.util.List;
 
 import reuse.pipe.Target;
 
-public abstract class IndexSwitch<T> extends AbstractSwitch<T> {
+public abstract class AbstractIndexRouter<T> extends AbstractListRouter<T> {
 
-	public IndexSwitch(List<Target<T>> targets) {
+	public AbstractIndexRouter(List<Target<T>> targets) {
 		super(targets);
 	}
 

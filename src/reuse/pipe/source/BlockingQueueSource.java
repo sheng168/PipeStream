@@ -4,6 +4,12 @@ import java.util.concurrent.BlockingQueue;
 
 import reuse.pipe.Target;
 
+/**
+ * @deprecated consider BlockingQueuePump
+ * @author sheng
+ *
+ * @param <T>
+ */
 public class BlockingQueueSource<T> extends AbstractThreadedSource<T> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(BlockingQueueSource.class);
 	

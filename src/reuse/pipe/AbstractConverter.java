@@ -15,7 +15,7 @@ public abstract class AbstractConverter<F, T> extends AbstractSource<T> implemen
 		feed(convert(value));
 	}
 
-	protected abstract T convert(F value);
+	protected abstract T convert(F value) throws Exception;
 	
 	@Override
 	public void close() throws IOException {

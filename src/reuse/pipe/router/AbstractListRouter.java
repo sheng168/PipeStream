@@ -6,10 +6,10 @@ import java.util.List;
 import reuse.pipe.Pipe;
 import reuse.pipe.Target;
 
-public abstract class AbstractSwitch<T> implements Pipe<T> {
+public abstract class AbstractListRouter<T> implements Pipe<T> {
 	List<Target<T>> targets;
 	
-	public AbstractSwitch(List<Target<T>> targets) {
+	public AbstractListRouter(List<Target<T>> targets) {
 		super();
 		assert targets != null;
 		assert targets.size() > 0;

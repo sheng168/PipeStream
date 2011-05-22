@@ -3,12 +3,12 @@ package reuse.pipe.router;
 import reuse.pipe.Decorator;
 import reuse.pipe.Target;
 
-public abstract class AbstractRouter<T> extends Decorator<T> {
-	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(AbstractRouter.class);
+public abstract class AbstractBinaryRouter<T> extends Decorator<T> {
+	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(AbstractBinaryRouter.class);
 
 	Target<T> targetFalse;
 	
-	public AbstractRouter(Target<T> targetTrue, Target<T> targetFalse) {
+	public AbstractBinaryRouter(Target<T> targetTrue, Target<T> targetFalse) {
 		super(targetTrue);
 		this.targetFalse = targetFalse;
 	}

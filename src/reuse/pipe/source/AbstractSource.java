@@ -1,5 +1,7 @@
 package reuse.pipe.source;
 
+import java.io.IOException;
+
 import reuse.pipe.Source;
 import reuse.pipe.Target;
 
@@ -7,6 +9,7 @@ import reuse.pipe.Target;
 public abstract class AbstractSource<T> implements Source<T> {
 
 	protected Target<T> target;
+	protected /*volatile*/ boolean close = false;
 
 	public AbstractSource(Target<T> target) {
 		super();
@@ -23,7 +26,12 @@ public abstract class AbstractSource<T> implements Source<T> {
 		this.target = target;
 	}
 
-	protected void feed(T val) throws Exception {
+	protected final void feed(T val) throws Exception {
 		target.send(val);
+	}
+
+	@Override
+	public void close() throws IOException {
+		close  = true;
 	}
 }

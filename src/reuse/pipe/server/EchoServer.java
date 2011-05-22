@@ -7,6 +7,7 @@ import java.nio.ByteBuffer;
 
 import reuse.pipe.Source;
 import reuse.pipe.Target;
+import reuse.pipe.decorator.ByteBufferCountDecorator;
 import reuse.pipe.decorator.CountDecorator;
 import reuse.pipe.source.InputStreamByteBufferSource;
 import reuse.pipe.target.OutputStreamByteBufferTarget;

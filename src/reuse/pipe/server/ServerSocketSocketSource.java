@@ -1,5 +1,3 @@
-
-
 package reuse.pipe.server;
 
 import java.io.IOException;

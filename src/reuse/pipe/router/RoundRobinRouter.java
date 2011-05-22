@@ -4,11 +4,11 @@ import java.util.List;
 
 import reuse.pipe.Target;
 
-public class RoundRobinSwitch<T> extends IndexSwitch<T> {
+public class RoundRobinRouter<T> extends AbstractIndexRouter<T> {
 
 	int index;
 	
-	public RoundRobinSwitch(List<Target<T>> targets) {
+	public RoundRobinRouter(List<Target<T>> targets) {
 		super(targets);
 	}
 
