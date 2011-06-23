@@ -21,10 +21,11 @@ public class TestDriver extends AbstractSource<Long> {
 		new LongValue(millis, this + ":name=outputDelayMillis");
 
 		new BooleanSource(
-			new SystemTimePump( 
-				new CountDecorator<Long>("out",
-					new SpacerDelayDecorator<Long>(millis , target)
-					))).run();
+			new SpacerDelayDecorator<Boolean>(millis, 
+				new SystemTimePump( 
+					new CountDecorator<Long>("out",
+						target)
+						))).run();
 	}
 
 	public static void main(String[] args) {

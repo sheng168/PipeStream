@@ -1,19 +1,39 @@
 <configuration scan="true" scanPeriod="10 seconds">
 	<jmxConfigurator />
-	
+
+	<!-- Insert the current time formatted as "yyyyMMdd'T'HHmmss" under the 
+		key "bySecond" into the logger context. This value will be available to all 
+		subsequent configuration elements. -->
+	<timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss" />
+
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<!-- use the previously created timestamp to create a uniquely named log 
+			file -->
+		<file>log-${bySecond}.log</file>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSSS} %.-2level [%.15thread]%X{port} %logger{10}.%M: %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
 			by default -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+		
 		<encoder>
 			<pattern>%d{HH:mm:ss.SSSS} %.-2level [%.15thread]%X{port} %logger{1}.%M: %msg%n
 			</pattern>
 		</encoder>
 	</appender>
-	
-	<logger name="real.msg" level="debug"/>
-	<logger name="reuse.pipe.decorator.SpacerDelayDecorator" level="INFO"/>
 
-	<root level="warn">
+	<logger name="real.msg" level="debug" />
+	<logger name="reuse.pipe.decorator.SpacerDelayDecorator" level="INFO" />
+
+	<root level="debug">
+		<appender-ref ref="FILE" />
 		<appender-ref ref="STDOUT" />
 	</root>
 </configuration>
