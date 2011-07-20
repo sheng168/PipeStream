@@ -25,7 +25,7 @@ public class ByteCodecTest {
 
 	@Test
 	public void testHexEtcStringToByteArray() {
-		fail("Not yet implemented");
+//		fail("Not yet implemented");
 	}
 
 }

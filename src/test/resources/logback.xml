@@ -9,7 +9,7 @@
 	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
 		<!-- use the previously created timestamp to create a uniquely named log 
 			file -->
-		<file>log-${bySecond}.log</file>
+		<file>log/log-${bySecond}.log</file>
 		<encoder>
 			<pattern>%d{HH:mm:ss.SSSS} %.-2level [%.15thread]%X{port} %logger{10}.%M: %msg%n
 			</pattern>
@@ -20,7 +20,7 @@
 		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
 			by default -->
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-			<level>INFO</level>
+			<level>debug</level>
 		</filter>
 		
 		<encoder>
