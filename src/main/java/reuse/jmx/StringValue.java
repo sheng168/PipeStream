@@ -1,6 +1,10 @@
 package reuse.jmx;
 
-
+/**
+ * Much be synchronized to read/write from JMX and application thread.
+ * @author shengyu
+ *
+ */
 public class StringValue implements StringValueMBean {
 	String value;
 
@@ -10,17 +14,17 @@ public class StringValue implements StringValueMBean {
 	}
 	
 	@Override
-	public String getValue() {
+	public synchronized String getValue() {
 		return value;
 	}
 
 	@Override
-	public void setValue(String value) {
+	public synchronized void setValue(String value) {
 		this.value = value;
 	}
 
 	@Override
-	public String toString() {
+	public synchronized String toString() {
 		return value.toString();
 	}
 }

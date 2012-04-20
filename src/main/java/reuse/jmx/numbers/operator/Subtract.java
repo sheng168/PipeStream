@@ -1,9 +1,9 @@
-package reuse.jmx.numbers;
+package reuse.jmx.numbers.operator;
 
-public class Add extends AbstractBinaryOperator {
+public class Subtract extends AbstractBinaryOperator {
 	private static final long serialVersionUID = 1L;
 
-	public Add(Number left, Number right) {
+	public Subtract(Number left, Number right) {
 		super(left, right);
 	}
 

@@ -2,33 +2,33 @@ package reuse.pipe.hazelcast;
 
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.ITopic;
+import com.hazelcast.core.Message;
 import com.hazelcast.core.MessageListener;
 
 import reuse.pipe.Target;
 import reuse.pipe.source.AbstractSource;
 
 
-public class TopicSource<T> extends AbstractSource<T> implements MessageListener<T> {
-	private ITopic<T> topic;
+public class TopicSource<E> extends AbstractSource<E> implements MessageListener<E> {
+	private ITopic<E> topic;
 
-	public TopicSource(ITopic<T> topic, Target<T> target) {
+	public TopicSource(ITopic<E> topic, Target<E> target) {
 		super(target);
 		this.topic = topic;
 		this.topic.addMessageListener(this);
 	}
 	
-	public TopicSource(String topic, Target<T> target) {
-		this(Hazelcast.<T>getTopic(topic), target);
+	public TopicSource(String topic, Target<E> target) {
+		this(Hazelcast.<E>getTopic(topic), target);
 	}
 	
 	@Override
-	public void onMessage(T value) {
+	public void onMessage(Message<E> value) {
 		try {
-			feed(value);
+			feed(value.getMessageObject());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-	
+	}	
 }

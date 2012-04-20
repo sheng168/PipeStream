@@ -10,17 +10,17 @@ public class ObjectValue implements ObjectValueMBean {
 	}
 	
 	@Override
-	public Object getValue() {
+	public synchronized Object getValue() {
 		return value;
 	}
 
 	@Override
-	public void setValue(Object value) {
+	public synchronized void setValue(Object value) {
 		this.value = value;
 	}
 
 	@Override
-	public String toString() {
+	public synchronized String toString() {
 		return value.toString();
 	}
 }

@@ -10,6 +10,10 @@ public class CountDecorator<T> extends Decorator<T> {
 	
 	private AtomicLong count = new AtomicLong();
 
+	public Number getCount() {
+		return count;
+	}
+
 	public CountDecorator(Target<T> target) {
 		this("",target);
 	}
@@ -26,4 +30,5 @@ public class CountDecorator<T> extends Decorator<T> {
 		super.send(val);
 	}
 
+	
 }

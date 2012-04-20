@@ -13,7 +13,7 @@ public class MBeanHelper {
 	/**
 	 * 
 	 * @param mbean
-	 * @param objectName "real.test:type=group,name=value"
+	 * @param objectName "reuse.test:type=group,name=value"
 	 */
 	public static void register(Object mbean, String objectName) {
 		MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();

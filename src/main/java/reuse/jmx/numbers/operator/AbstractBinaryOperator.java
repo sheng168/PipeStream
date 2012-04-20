@@ -1,4 +1,4 @@
-package reuse.jmx.numbers;
+package reuse.jmx.numbers.operator;
 
 public abstract class AbstractBinaryOperator extends Number {
 	private static final long serialVersionUID = 1L;
