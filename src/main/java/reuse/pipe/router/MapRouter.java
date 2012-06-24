@@ -5,8 +5,8 @@ import java.util.Map;
 
 import reuse.pipe.Decorator;
 import reuse.pipe.Target;
+import reuse.util.Function;
 
-import com.google.common.base.Function;
 
 public abstract class MapRouter<K,T> extends Decorator<T> {
 	Function<T,K> func;

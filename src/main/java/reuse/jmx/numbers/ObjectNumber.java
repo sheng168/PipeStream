@@ -1,6 +1,6 @@
 package reuse.jmx.numbers;
 
-import com.google.common.base.*;
+import reuse.util.Function;
 
 /**
  * Extract a number from an object using a function.

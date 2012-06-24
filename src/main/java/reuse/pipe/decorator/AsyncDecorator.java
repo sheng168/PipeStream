@@ -5,8 +5,6 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.SynchronousQueue;
 
-import com.google.common.base.Function;
-
 import reuse.jmx.NumberAndDeltaMonitor;
 import reuse.jmx.numbers.ObjectNumber;
 import reuse.pipe.Decorator;
@@ -15,6 +13,7 @@ import reuse.pipe.Target;
 import reuse.pipe.source.BlockingQueueSource;
 import reuse.pipe.source.BooleanSource;
 import reuse.pipe.thread.ThreadSafe;
+import reuse.util.Function;
 
 public class AsyncDecorator<T> extends Decorator<T> implements ThreadSafe {
 	final BlockingQueue<T> queue;

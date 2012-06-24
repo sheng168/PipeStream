@@ -12,12 +12,11 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import com.google.common.base.Function;
-
 import reuse.pipe.Converter;
 import reuse.pipe.Source;
 import reuse.pipe.Target;
 import reuse.pipe.pump.SystemTimePump;
+import reuse.util.Function;
 
 public class AsFunction {
 
