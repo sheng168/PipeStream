@@ -36,6 +36,6 @@ public abstract class AbstractThreadedSource<T> extends AbstractSource<T> implem
 	}
 
 	protected void poll() throws Exception {
-		TimeUnit.MINUTES.sleep(1);
+		TimeUnit.SECONDS.sleep(1);
 	}
 }
