@@ -5,8 +5,8 @@ import com.hazelcast.core.ITopic;
 import com.hazelcast.core.Message;
 import com.hazelcast.core.MessageListener;
 
+import reuse.pipe.AbstractSource;
 import reuse.pipe.Target;
-import reuse.pipe.source.AbstractSource;
 
 
 public class TopicSource<E> extends AbstractSource<E> implements MessageListener<E> {

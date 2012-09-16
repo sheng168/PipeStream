@@ -2,6 +2,7 @@ package reuse.pipe.source;
 
 import java.util.concurrent.TimeUnit;
 
+import reuse.pipe.AbstractSource;
 import reuse.pipe.Target;
 
 

@@ -3,9 +3,9 @@ package reuse.pipe.thread;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
+import reuse.pipe.AbstractSource;
+import reuse.pipe.AbstractTarget;
 import reuse.pipe.Target;
-import reuse.pipe.source.AbstractSource;
-import reuse.pipe.target.AbstractTarget;
 import reuse.util.Pair;
 
 public class MergePoint<L, R> extends AbstractSource<Pair<L, R>> {

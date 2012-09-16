@@ -1,9 +1,7 @@
-package reuse.pipe.source;
+package reuse.pipe;
 
 import java.io.IOException;
 
-import reuse.pipe.Source;
-import reuse.pipe.Target;
 
 
 public abstract class AbstractSource<T> implements Source<T> {

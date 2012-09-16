@@ -1,8 +1,7 @@
-package reuse.pipe.target;
+package reuse.pipe;
 
 import java.io.IOException;
 
-import reuse.pipe.Target;
 
 public abstract class AbstractTarget<T> implements Target<T> {
 	@Override

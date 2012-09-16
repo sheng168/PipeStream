@@ -5,9 +5,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
+import reuse.pipe.AbstractTarget;
 import reuse.pipe.Source;
 import reuse.pipe.Target;
-import reuse.pipe.target.AbstractTarget;
 
 public abstract class AbstractSocketTarget<T> extends AbstractTarget<Socket>{
 

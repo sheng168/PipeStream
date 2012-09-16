@@ -1,10 +1,10 @@
 package reuse.pipe.source.test;
 
+import reuse.pipe.AbstractSource;
 import reuse.pipe.Decorator;
 import reuse.pipe.NullTarget;
 import reuse.pipe.Target;
 import reuse.pipe.decorator.CountDecorator;
-import reuse.pipe.source.AbstractSource;
 import reuse.util.StopWatch;
 
 public class TestSource extends AbstractSource {

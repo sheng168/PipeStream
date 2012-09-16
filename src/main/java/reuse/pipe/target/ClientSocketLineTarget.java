@@ -7,6 +7,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 
+import reuse.pipe.AbstractTarget;
 import reuse.pipe.Target;
 
 public class ClientSocketLineTarget extends AbstractTarget<Object> {

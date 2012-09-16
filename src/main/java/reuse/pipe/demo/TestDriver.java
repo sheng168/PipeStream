@@ -3,6 +3,7 @@ package reuse.pipe.demo;
 import java.util.concurrent.atomic.AtomicLong;
 
 import reuse.jmx.LongValue;
+import reuse.pipe.AbstractSource;
 import reuse.pipe.NullTarget;
 import reuse.pipe.Target;
 import reuse.pipe.decorator.CountDecorator;
@@ -10,7 +11,6 @@ import reuse.pipe.decorator.LogDecorator;
 import reuse.pipe.decorator.SpacerDelayDecorator;
 import reuse.pipe.pump.CounterPump;
 import reuse.pipe.pump.SystemTimePump;
-import reuse.pipe.source.AbstractSource;
 import reuse.pipe.source.BooleanSource;
 
 public class TestDriver extends AbstractSource<Long> {
