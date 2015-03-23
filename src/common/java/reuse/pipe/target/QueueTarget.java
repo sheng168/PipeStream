@@ -1,7 +1,6 @@
 package reuse.pipe.target;
 
 import java.util.Queue;
-import java.util.concurrent.BlockingQueue;
 
 import reuse.pipe.AbstractTarget;
 

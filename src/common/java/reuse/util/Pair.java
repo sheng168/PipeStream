@@ -20,6 +20,7 @@ public class Pair<L,R> {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
+		@SuppressWarnings("rawtypes")
 		Pair other = (Pair) obj;
 		if (left == null) {
 			if (other.left != null)

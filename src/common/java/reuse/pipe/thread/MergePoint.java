@@ -77,6 +77,6 @@ public class MergePoint<L, R> extends AbstractSource<Pair<L, R>> {
 			}.start();
 		}
 		
-		MergePoint mp;
+//		MergePoint mp;
 	}
 }

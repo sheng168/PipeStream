@@ -1,6 +1,5 @@
 package reuse.jmx;
 
-import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Don't use. This is just for testing. In general, should only use

@@ -4,7 +4,6 @@ import reuse.pipe.NullTarget;
 import reuse.pipe.Target;
 import reuse.pipe.decorator.CountDecorator;
 import reuse.pipe.pump.NanoTimePump;
-import reuse.pipe.pump.SystemTimePump;
 import reuse.pipe.source.BooleanSource;
 
 public class IsDifferentRouter<T> extends AbstractBinaryRouter<T> {

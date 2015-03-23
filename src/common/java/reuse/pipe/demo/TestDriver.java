@@ -9,7 +9,6 @@ import reuse.pipe.Target;
 import reuse.pipe.decorator.CountDecorator;
 import reuse.pipe.decorator.LogDecorator;
 import reuse.pipe.decorator.SpacerDelayDecorator;
-import reuse.pipe.pump.CounterPump;
 import reuse.pipe.pump.SystemTimePump;
 import reuse.pipe.source.BooleanSource;
 

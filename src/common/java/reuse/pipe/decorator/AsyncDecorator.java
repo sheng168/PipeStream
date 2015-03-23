@@ -1,9 +1,7 @@
 package reuse.pipe.decorator;
 
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.SynchronousQueue;
 
 import reuse.jmx.NumberAndDeltaMonitor;
 import reuse.jmx.numbers.ObjectNumber;

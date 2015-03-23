@@ -5,7 +5,6 @@ import reuse.pipe.Target;
 import reuse.pipe.decorator.AsyncDecorator;
 import reuse.pipe.decorator.CountDecorator;
 import reuse.pipe.decorator.DelayDecorator;
-import reuse.pipe.decorator.LogDecorator;
 import reuse.pipe.pump.AbstractPump;
 import reuse.pipe.source.BooleanSource;
 

@@ -10,6 +10,7 @@ public class PairTest {
 
 	@Before
 	public void setUp() throws Exception {
+		System.err.println("setup");
 	}
 
 	@After
