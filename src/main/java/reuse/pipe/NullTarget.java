@@ -9,7 +9,7 @@ package reuse.pipe;
  * @param <T>
  */
 public class NullTarget<T> extends Object implements Target<T> {
-	@SuppressWarnings({ "unchecked", "deprecation" })
+	@SuppressWarnings({ "unchecked" })
 	public static<T> Target<T> get() {
 		return t;
 	}

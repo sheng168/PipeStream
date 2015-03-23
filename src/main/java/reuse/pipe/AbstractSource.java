@@ -11,7 +11,10 @@ public abstract class AbstractSource<T> implements Source<T> {
 
 	public AbstractSource(Target<T> target) {
 		super();
-		this.target = target;
+		if (target == null)
+			this.target = NullTarget.get();
+		else
+			this.target = target;
 	}
 
 	@Override
