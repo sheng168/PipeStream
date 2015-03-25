@@ -16,7 +16,7 @@ public class Count {
 	public static void main(String[] args) {
 		final AtomicLong count = new AtomicLong();
 		new reuse.jmx.NumberMonitor(count, "real.test:type=count");
-		new reuse.jmx.NumberMonitor(new reuse.util.Speed(count), "real.test:type=speed");
+		new reuse.jmx.NumberMonitor(new reuse.jmx.numbers.Speed(count), "real.test:type=speed");
 		for (int i = 0; i < 1; i++) {
 			new Thread(new Runnable() {
 

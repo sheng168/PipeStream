@@ -3,11 +3,14 @@ package reuse.pipe.thread;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
+import com.google.common.annotations.Beta;
+
 import reuse.pipe.AbstractSource;
 import reuse.pipe.AbstractTarget;
 import reuse.pipe.Target;
 import reuse.util.Pair;
 
+@Beta
 public class MergePoint<L, R> extends AbstractSource<Pair<L, R>> {
 	private Pair<L, R> pair = new Pair<L, R>();
 	

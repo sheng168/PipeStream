@@ -1,15 +1,9 @@
 package reuse.pipe.thread;
 
-import static org.junit.Assert.*;
-//import static org.mockito.Mockito.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import reuse.pipe.Target;
-import reuse.pipe.decorator.AsyncDecorator;
-import reuse.util.Pair;
+//import static org.mockito.Mockito.*;
 
 public class MergePointTest {
 

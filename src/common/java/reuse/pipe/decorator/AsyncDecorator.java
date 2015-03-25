@@ -25,12 +25,12 @@ public class AsyncDecorator<T> extends Decorator<T> implements ThreadSafe {
 	public AsyncDecorator(BlockingQueue<T> queue, Target<T> target) {
 		super(target);
 		this.queue = queue;
-		new NumberAndDeltaMonitor(new ObjectNumber<BlockingQueue<T>>(queue, new Function<BlockingQueue<T>, Number>() {
-			@Override
-			public Number apply(BlockingQueue<T> q) {
-				return q.size();
-			}
-		}), this+":name=queueSize");
+//		new NumberAndDeltaMonitor(new ObjectNumber<BlockingQueue<T>>(queue, new Function<BlockingQueue<T>, Number>() {
+//			@Override
+//			public Number apply(BlockingQueue<T> q) {
+//				return q.size();
+//			}
+//		}), this+":name=queueSize");
 		source = new BlockingQueueSource<T>(queue, target);
 		source.start();
 	}

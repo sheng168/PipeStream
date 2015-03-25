@@ -1,4 +1,4 @@
-package reuse.util;
+package reuse.jmx.numbers;
 
 
 @SuppressWarnings("serial")
