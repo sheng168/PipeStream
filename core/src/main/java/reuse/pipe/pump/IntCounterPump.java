@@ -5,9 +5,9 @@ import reuse.pipe.Target;
 import reuse.pipe.decorator.CountDecorator;
 import reuse.pipe.source.BooleanSource;
 
-import com.google.common.annotations.Beta;
+//import com.google.common.annotations.Beta;
 
-@Beta
+//@Beta
 public class IntCounterPump extends AbstractPump<Integer> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(IntCounterPump.class);
 
@@ -30,7 +30,7 @@ public class IntCounterPump extends AbstractPump<Integer> {
 				new IntCounterPump(
 					new CountDecorator<Integer>(
 //						new LogDecorator<Long>(
-							new NullTarget<>()
+							null
 //						)
 					)
 				)

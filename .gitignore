@@ -1,0 +1,13 @@
+res
+gen
+libs/slf4j-android-1.6.1-RC1.jar
+proguard-project.txt
+project.properties
+AndroidManifest.xml
+bin
+target
+.idea
+*.iml
+*.prefs
+.classpath
+.project
