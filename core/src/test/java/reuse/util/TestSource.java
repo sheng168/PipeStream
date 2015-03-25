@@ -1,4 +1,4 @@
-package reuse.pipe.source.test;
+package reuse.util;
 
 import reuse.pipe.AbstractSource;
 import reuse.pipe.Decorator;
