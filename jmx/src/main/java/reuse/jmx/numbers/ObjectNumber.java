@@ -1,8 +1,10 @@
 package reuse.jmx.numbers;
 
-import java.util.function.Function;
+//import java.util.function.Function;
 
 //import reuse.util.Function;
+
+import reuse.util.Function;
 
 /**
  * Extract a number from an object using a function.
