@@ -5,7 +5,6 @@ import reuse.pipe.Decorator;
 import reuse.pipe.NullTarget;
 import reuse.pipe.Target;
 import reuse.pipe.decorator.CountDecorator;
-import reuse.util.StopWatch;
 
 public class TestSource extends AbstractSource {
 	public TestSource(Target target) {
