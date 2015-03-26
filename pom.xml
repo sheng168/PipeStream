@@ -13,7 +13,8 @@
 		<module>util</module>
 		<module>jmx</module>
 		<module>core</module>
-		<!--<module>common</module>-->
+		<module>hazelcast</module>
+		<module>common</module>
 	</modules>
 
 	<dependencies>
