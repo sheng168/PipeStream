@@ -10,10 +10,10 @@
 	<url>http://maven.apache.org</url>
 
 	<modules>
-		<module>jmx</module>
 		<module>util</module>
+		<module>jmx</module>
 		<module>core</module>
-		<module>common</module>
+		<!--<module>common</module>-->
 	</modules>
 
 	<dependencies>
