@@ -11,9 +11,9 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class HelloJmx {
     public static void main(String[] args) throws InterruptedException {
-        StringValue name = new StringValue("JMX", "reuse.test:type=group,name=name");
+        final StringValue name = new StringValue("JMX", "reuse.test:type=group,name=name");
 
-        AtomicLong times = new AtomicLong(3);
+        final AtomicLong times = new AtomicLong(3);
         new LongValue(times, "reuse.test:type=group,name=times");
 
         new Runner("reuse.test:type=group,name=action", new Runnable() {
