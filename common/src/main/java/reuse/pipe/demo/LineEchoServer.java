@@ -3,8 +3,8 @@ package reuse.pipe.demo;
 import java.io.IOException;
 import java.net.Socket;
 
-import reuse.pipe.NullTarget;
-import reuse.pipe.Target;
+import reuse.pipe.api.NullTarget;
+import reuse.pipe.api.Target;
 import reuse.pipe.decorator.CountDecorator;
 import reuse.pipe.router.BroadcastBinaryRouter;
 import reuse.pipe.source.ServerSocketLineSource;

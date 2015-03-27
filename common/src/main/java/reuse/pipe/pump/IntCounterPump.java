@@ -1,7 +1,6 @@
 package reuse.pipe.pump;
 
-import reuse.pipe.NullTarget;
-import reuse.pipe.Target;
+import reuse.pipe.api.Target;
 import reuse.pipe.decorator.CountDecorator;
 import reuse.pipe.source.BooleanSource;
 

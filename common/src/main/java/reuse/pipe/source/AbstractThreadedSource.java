@@ -2,8 +2,8 @@ package reuse.pipe.source;
 
 import java.util.concurrent.TimeUnit;
 
-import reuse.pipe.AbstractSource;
-import reuse.pipe.Target;
+import reuse.pipe.base.AbstractSource;
+import reuse.pipe.api.Target;
 
 
 public abstract class AbstractThreadedSource<T> extends AbstractSource<T> implements Runnable {

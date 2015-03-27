@@ -1,6 +1,6 @@
 package reuse.pipe.hazelcast;
 
-import reuse.pipe.NullTarget;
+import reuse.pipe.api.NullTarget;
 import reuse.pipe.decorator.CountDecorator;
 
 public class TopicSourceTest {

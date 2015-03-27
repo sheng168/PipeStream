@@ -1,4 +1,4 @@
-package reuse.pipe;
+package reuse.pipe.api;
 
 /**
  * This is a alternative to initializing a Target variable to null.

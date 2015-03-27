@@ -1,4 +1,4 @@
-package reuse.pipe;
+package reuse.pipe.api;
 
 /**
  * Converter is a Target that accepts objects of type I, 

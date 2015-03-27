@@ -3,9 +3,9 @@ package reuse.pipe.decorator;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import reuse.pipe.Decorator;
-import reuse.pipe.NullTarget;
-import reuse.pipe.Target;
+import reuse.pipe.base.Decorator;
+import reuse.pipe.api.NullTarget;
+import reuse.pipe.api.Target;
 import reuse.pipe.source.BlockingQueueSource;
 import reuse.pipe.source.BooleanSource;
 import reuse.pipe.thread.ThreadSafe;

@@ -1,7 +1,7 @@
 package reuse.pipe.router;
 
-import reuse.pipe.NullTarget;
-import reuse.pipe.Target;
+import reuse.pipe.api.NullTarget;
+import reuse.pipe.api.Target;
 import reuse.pipe.decorator.CountDecorator;
 import reuse.pipe.pump.NanoTimePump;
 import reuse.pipe.source.BooleanSource;

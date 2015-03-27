@@ -4,8 +4,8 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import reuse.pipe.NullTarget;
-import reuse.pipe.Target;
+import reuse.pipe.api.NullTarget;
+import reuse.pipe.api.Target;
 
 public class InputStreamByteSource extends InputStreamAbstractSource<Byte> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory

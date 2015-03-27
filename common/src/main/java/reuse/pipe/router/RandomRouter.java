@@ -3,7 +3,7 @@ package reuse.pipe.router;
 import java.util.List;
 import java.util.Random;
 
-import reuse.pipe.Target;
+import reuse.pipe.api.Target;
 
 public class RandomRouter<T> extends AbstractIndexRouter<T> {
 	private final Random RANDOM = new Random();

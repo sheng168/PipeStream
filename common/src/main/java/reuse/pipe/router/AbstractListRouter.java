@@ -3,10 +3,10 @@ package reuse.pipe.router;
 import java.io.IOException;
 import java.util.List;
 
-import reuse.pipe.Pipe;
-import reuse.pipe.Target;
+import reuse.pipe.api.Converter;
+import reuse.pipe.api.Target;
 
-public abstract class AbstractListRouter<T> implements reuse.pipe.Converter<T,T> {
+public abstract class AbstractListRouter<T> implements Converter<T,T> {
 	List<Target<T>> targets;
 	
 	public AbstractListRouter(List<Target<T>> targets) {

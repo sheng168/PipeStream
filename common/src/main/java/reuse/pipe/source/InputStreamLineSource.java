@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import reuse.pipe.Target;
+import reuse.pipe.api.Target;
 
 public class InputStreamLineSource extends InputStreamAbstractSource<String> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory

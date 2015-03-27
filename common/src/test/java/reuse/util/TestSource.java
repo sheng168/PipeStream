@@ -1,9 +1,9 @@
 package reuse.util;
 
-import reuse.pipe.AbstractSource;
-import reuse.pipe.Decorator;
-import reuse.pipe.NullTarget;
-import reuse.pipe.Target;
+import reuse.pipe.base.AbstractSource;
+import reuse.pipe.base.Decorator;
+import reuse.pipe.api.NullTarget;
+import reuse.pipe.api.Target;
 import reuse.pipe.decorator.CountDecorator;
 
 public class TestSource extends AbstractSource {

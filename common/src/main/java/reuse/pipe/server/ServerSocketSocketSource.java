@@ -6,7 +6,7 @@ import java.net.Socket;
 
 import org.slf4j.MDC;
 
-import reuse.pipe.Target;
+import reuse.pipe.api.Target;
 import reuse.pipe.source.AbstractThreadedSource;
 
 public class ServerSocketSocketSource extends AbstractThreadedSource<Socket> {

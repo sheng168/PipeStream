@@ -1,4 +1,7 @@
-package reuse.pipe;
+package reuse.pipe.base;
+
+import reuse.pipe.api.Converter;
+import reuse.pipe.api.Target;
 
 import java.io.IOException;
 

@@ -1,4 +1,8 @@
-package reuse.pipe;
+package reuse.pipe.base;
+
+import reuse.pipe.api.NullTarget;
+import reuse.pipe.api.Source;
+import reuse.pipe.api.Target;
 
 import java.io.IOException;
 
@@ -34,5 +38,6 @@ public abstract class AbstractSource<T> implements Source<T> {
 	@Override
 	public void close() throws IOException {
 		close  = true;
+		target.close();
 	}
 }

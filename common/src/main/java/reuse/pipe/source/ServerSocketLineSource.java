@@ -3,8 +3,8 @@ package reuse.pipe.source;
 import java.io.IOException;
 import java.io.InputStream;
 
-import reuse.pipe.NullTarget;
-import reuse.pipe.Target;
+import reuse.pipe.api.NullTarget;
+import reuse.pipe.api.Target;
 import reuse.pipe.decorator.CountDecorator;
 import reuse.pipe.decorator.LogDecorator;
 

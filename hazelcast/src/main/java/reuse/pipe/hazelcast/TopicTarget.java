@@ -1,6 +1,6 @@
 package reuse.pipe.hazelcast;
 
-import reuse.pipe.AbstractTarget;
+import reuse.pipe.base.AbstractTarget;
 
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.ITopic;

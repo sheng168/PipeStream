@@ -3,7 +3,7 @@ package reuse.pipe.router;
 import java.util.HashSet;
 import java.util.List;
 
-import reuse.pipe.Target;
+import reuse.pipe.api.Target;
 
 public class BroadcastRouter<T> extends AbstractListRouter<T> {
 	HashSet<Target<T>> toRemove = new HashSet<Target<T>>();

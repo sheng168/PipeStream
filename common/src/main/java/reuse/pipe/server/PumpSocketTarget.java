@@ -4,9 +4,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
 
-import reuse.pipe.NullTarget;
-import reuse.pipe.Source;
-import reuse.pipe.Target;
+import reuse.pipe.api.NullTarget;
+import reuse.pipe.api.Source;
+import reuse.pipe.api.Target;
 import reuse.pipe.decorator.ByteBufferCountDecorator;
 import reuse.pipe.source.InputStreamByteBufferSource;
 import reuse.pipe.target.OutputStreamByteBufferTarget;

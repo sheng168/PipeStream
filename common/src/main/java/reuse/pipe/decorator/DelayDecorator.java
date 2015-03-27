@@ -1,7 +1,7 @@
 package reuse.pipe.decorator;
 
-import reuse.pipe.Decorator;
-import reuse.pipe.Target;
+import reuse.pipe.base.Decorator;
+import reuse.pipe.api.Target;
 
 /**
  * Add a fixed amount of delay

@@ -2,7 +2,7 @@ package reuse.pipe.router;
 
 import java.util.List;
 
-import reuse.pipe.Target;
+import reuse.pipe.api.Target;
 
 public class RoundRobinRouter<T> extends AbstractIndexRouter<T> {
 

@@ -3,8 +3,8 @@ package reuse.pipe.decorator;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import reuse.pipe.Decorator;
-import reuse.pipe.Target;
+import reuse.pipe.base.Decorator;
+import reuse.pipe.api.Target;
 import reuse.pipe.thread.ThreadSafe;
 
 public class AsyncDecoratorOld<T> extends Decorator<T> implements ThreadSafe {

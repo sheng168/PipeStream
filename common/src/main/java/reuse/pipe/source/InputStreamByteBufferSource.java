@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 
-import reuse.pipe.NullTarget;
-import reuse.pipe.Target;
+import reuse.pipe.api.NullTarget;
+import reuse.pipe.api.Target;
 import reuse.pipe.decorator.LogDecorator;
 
 public class InputStreamByteBufferSource extends InputStreamAbstractSource<ByteBuffer> {

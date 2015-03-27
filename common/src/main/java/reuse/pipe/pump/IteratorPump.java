@@ -2,7 +2,7 @@ package reuse.pipe.pump;
 
 import java.util.Iterator;
 
-import reuse.pipe.Target;
+import reuse.pipe.api.Target;
 
 
 public class IteratorPump<T> extends AbstractPump<T> {

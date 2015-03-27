@@ -1,7 +1,7 @@
 package reuse.pipe.router;
 
-import reuse.pipe.Decorator;
-import reuse.pipe.Target;
+import reuse.pipe.base.Decorator;
+import reuse.pipe.api.Target;
 
 public class BroadcastBinaryRouter<T> extends Decorator<T> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(BroadcastBinaryRouter.class);

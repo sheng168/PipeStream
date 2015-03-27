@@ -5,9 +5,9 @@ import java.util.concurrent.CyclicBarrier;
 
 //import com.google.common.annotations.Beta;
 
-import reuse.pipe.AbstractSource;
-import reuse.pipe.AbstractTarget;
-import reuse.pipe.Target;
+import reuse.pipe.base.AbstractSource;
+import reuse.pipe.base.AbstractTarget;
+import reuse.pipe.api.Target;
 import reuse.util.Pair;
 
 //@Beta

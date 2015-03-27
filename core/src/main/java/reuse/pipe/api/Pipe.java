@@ -1,4 +1,4 @@
-package reuse.pipe;
+package reuse.pipe.api;
 
 /**
  * Pipe is a special case of Converter that does no type conversion

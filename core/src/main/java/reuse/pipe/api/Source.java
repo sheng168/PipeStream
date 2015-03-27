@@ -1,4 +1,4 @@
-package reuse.pipe;
+package reuse.pipe.api;
 
 import java.io.Closeable;
 

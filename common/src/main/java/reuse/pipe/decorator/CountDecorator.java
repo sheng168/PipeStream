@@ -3,8 +3,8 @@ package reuse.pipe.decorator;
 import java.util.concurrent.atomic.AtomicLong;
 
 import reuse.jmx.*;
-import reuse.pipe.Decorator;
-import reuse.pipe.Target;
+import reuse.pipe.base.Decorator;
+import reuse.pipe.api.Target;
 
 public class CountDecorator<T> extends Decorator<T> {
 	

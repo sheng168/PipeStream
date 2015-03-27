@@ -7,7 +7,7 @@ import java.net.Socket;
 
 import org.slf4j.MDC;
 
-import reuse.pipe.Target;
+import reuse.pipe.api.Target;
 
 public abstract class ServerSocketAbstractSource<T> extends AbstractThreadedSource<T> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ServerSocketAbstractSource.class);

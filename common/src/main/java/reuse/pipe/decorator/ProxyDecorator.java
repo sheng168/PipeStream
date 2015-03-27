@@ -1,8 +1,10 @@
 package reuse.pipe.decorator;
 
-import reuse.pipe.Decorator;
-import reuse.pipe.Target;
+import reuse.pipe.api.Beta;
+import reuse.pipe.base.Decorator;
+import reuse.pipe.api.Target;
 
+@Beta
 public class ProxyDecorator<T> extends Decorator<T> {
 	
 	private Decorator<T> delegate;

@@ -5,7 +5,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 
-import reuse.pipe.Target;
+import reuse.pipe.api.Target;
 
 public abstract class InputStreamAbstractSource<T> extends AbstractThreadedSource<T> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory

@@ -2,7 +2,7 @@ package reuse.pipe.source;
 
 import java.util.concurrent.BlockingQueue;
 
-import reuse.pipe.Target;
+import reuse.pipe.api.Target;
 
 /**
  * @deprecated consider BlockingQueuePump

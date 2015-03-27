@@ -3,9 +3,9 @@ package reuse.pipe.demo;
 import java.util.concurrent.atomic.AtomicLong;
 
 import reuse.jmx.LongValue;
-import reuse.pipe.AbstractSource;
-import reuse.pipe.NullTarget;
-import reuse.pipe.Target;
+import reuse.pipe.base.AbstractSource;
+import reuse.pipe.api.NullTarget;
+import reuse.pipe.api.Target;
 import reuse.pipe.decorator.CountDecorator;
 import reuse.pipe.decorator.LogDecorator;
 import reuse.pipe.decorator.SpacerDelayDecorator;

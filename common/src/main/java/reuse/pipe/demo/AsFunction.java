@@ -8,9 +8,9 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import reuse.pipe.Converter;
-import reuse.pipe.Source;
-import reuse.pipe.Target;
+import reuse.pipe.api.Converter;
+import reuse.pipe.api.Source;
+import reuse.pipe.api.Target;
 import reuse.pipe.pump.SystemTimePump;
 import reuse.util.Function;
 

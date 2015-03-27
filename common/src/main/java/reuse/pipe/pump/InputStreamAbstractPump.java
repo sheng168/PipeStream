@@ -2,7 +2,7 @@ package reuse.pipe.pump;
 
 import java.io.InputStream;
 
-import reuse.pipe.Target;
+import reuse.pipe.api.Target;
 
 public abstract class InputStreamAbstractPump<T> extends AbstractPump<T> {
 	static org.slf4j.Logger log = org.slf4j.LoggerFactory
