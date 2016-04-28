@@ -6,7 +6,7 @@ namespace Pipes
 
     public class StringFormatDecorator<S> : AbstractConverter<S, string>
     {
-        Func<string,string> myFunc = var1 => "value: " + var1;
+//        Func<string,string> myFunc = var1 => "value: " + var1;
 
         readonly string format;
         readonly object[] args;
