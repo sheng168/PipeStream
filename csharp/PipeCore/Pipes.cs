@@ -1,5 +1,6 @@
 ﻿using System;
-using System.IO;
+//using System.IO;
+using System.Collections.Generic;
 
 namespace Pipes
 {
@@ -34,7 +35,7 @@ namespace Pipes
     {
         public abstract void On(T value);
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             // noop default implementation
         }
@@ -66,6 +67,37 @@ namespace Pipes
         public void Dispose()
         {
             Target.Dispose();
+        }
+    }
+
+    public class Splitter<T>: AbstractTarget<T>
+    {
+        System.Collections.Generic.List<ITarget<T>> Targets;
+
+        public Splitter(List<ITarget<T>> targets)
+        {
+            this.Targets = targets;
+        }
+
+        public Splitter(params ITarget<T>[] targets)
+        {
+            Targets = new List<ITarget<T>>(targets);
+        }
+
+        public override void On(T value)
+        {
+            foreach (var t in Targets)
+            {
+                t.On(value);
+            }
+        }
+
+        public override void Dispose()
+        {
+            foreach (var t in Targets)
+            {
+                t.Dispose();
+            }
         }
     }
 

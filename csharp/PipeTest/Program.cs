@@ -110,10 +110,10 @@ namespace Pipes
 				{
                     Target = new FuncDecorator<string>(s => DateTime.Now + " " + s)
                     {
-    					Target = new Labeler(arg + " Out: ")
-    					{
-    						Target = new ConsoleTarget()
-    					}
+                        Target = new Splitter<string>(
+                                new Labeler(arg + " Out: ") { Target = new ConsoleTarget() }, 
+                                new TextWriterTarget(new StreamWriter(arg + "-out.log"))
+                        )
                     }
 				}.On(p.StandardOutput);
 
@@ -132,43 +132,6 @@ namespace Pipes
 			{
 				console.On(line);
 			}
-		}
-	}
-
-	public class StreamReader2Line : AbstractConverter<StreamReader, string>
-	{
-		public async override void On(StreamReader value)
-		{
-			while (true)
-			{
-				var line = await value.ReadLineAsync();
-				if (line == null)
-					break;
-				Target.On(line);
-			}
-		}
-	}
-
-	public class ConsoleTarget : AbstractTarget<string>
-	{
-		public override void On(string value)
-		{
-			Console.WriteLine(value);
-		}
-	}
-
-	public class Labeler : AbstractConverter<string, string>
-	{
-		string Label = "ok: ";
-
-		public Labeler(string label)
-		{
-			this.Label = label;
-		}
-
-		public override void On(string value)
-		{
-			Target.On(this.Label + value);
 		}
 	}
 
