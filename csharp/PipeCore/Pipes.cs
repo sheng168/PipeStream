@@ -58,30 +58,61 @@ namespace Pipes
 //            Target = target;
 //        }
 
+        protected ITarget<T> target;
+
         public ITarget<T> Target
         {
-            get;
-            set;
+            get { return target; }
+            set { target = value; }
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             Target.Dispose();
         }
     }
 
-    public class Splitter<T>: AbstractTarget<T>
+    public class Splitter2<T> : AbstractSource<T> 
     {
-        System.Collections.Generic.List<ITarget<T>> Targets;
+        protected ITarget<T> target2;
 
-        public Splitter(List<ITarget<T>> targets)
+        public ITarget<T> Target2
+        {
+            get { return target2; }
+            set { target2 = value; }
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            Target2.Dispose();
+        }
+    }
+
+    public abstract class SplitterN<T>: AbstractTarget<T>
+    {
+        protected System.Collections.Generic.List<ITarget<T>> Targets;
+
+        public SplitterN(List<ITarget<T>> targets)
         {
             this.Targets = targets;
         }
 
-        public Splitter(params ITarget<T>[] targets)
+        public SplitterN(params ITarget<T>[] targets)
         {
             Targets = new List<ITarget<T>>(targets);
+        }
+    }
+
+    public class Splitter<T>: SplitterN<T>
+    {
+        public Splitter(List<ITarget<T>> targets) : base(targets)
+        {
+        }
+        
+
+        public Splitter(params ITarget<T>[] targets) : base(targets)
+        {
         }
 
         public override void On(T value)
@@ -114,7 +145,7 @@ namespace Pipes
     {
         public override void On(T value)
         {
-            Target.On(value);
+            target.On(value);
         }
     }
 

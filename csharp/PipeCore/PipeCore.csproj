@@ -37,6 +37,17 @@
     <Compile Include="StringFormatDecorator.cs" />
     <Compile Include="CountDecorator.cs" />
     <Compile Include="FuncDecorator.cs" />
+    <Compile Include="ConsoleTarget.cs" />
+    <Compile Include="Labeler.cs" />
+    <Compile Include="StreamReader2Line.cs" />
+    <Compile Include="TextWriterTarget.cs" />
+    <Compile Include="CountConverter.cs" />
+    <Compile Include="AsyncDecorator.cs" />
+    <Compile Include="SyncLockDecorator.cs" />
+    <Compile Include="DelayDecorator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Decorator\" />
+  </ItemGroup>
 </Project>
